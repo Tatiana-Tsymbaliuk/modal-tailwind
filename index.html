@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/output.css" />
+    <title>TailwindCSS</title>
+  </head>
+  <body class="bg-gray-200 flex items-center justify-center h-screen">
+    <!-- Кнопка для открытия модального окна -->
+    <button
+      id="openModalBtn"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    >
+      Открыть модальное окно
+    </button>
+
+    <!-- Модальное окно -->
+    <div
+      id="myModal"
+      class="fixed inset-0 overflow-auto flex items-center justify-center hidden"
+    >
+      <div
+        class="relative modal-container bg-white max-w-md mx-auto p-4 rounded shadow-lg"
+      >
+        <!-- Контент модального окна -->
+        <div class="text-gray-800">
+          <p class="mb-4">Привет! Это модальное окно.</p>
+          <button
+            id="closeModalBtn"
+            class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          >
+            Закрыть
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // JavaScript для управления видимостью модального окна
+      const openModalBtn = document.getElementById("openModalBtn");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const modal = document.getElementById("myModal");
+
+      // Открыть модальное окно
+      openModalBtn.addEventListener("click", () => {
+        modal.classList.remove("hidden");
+      });
+
+      // Закрыть модальное окно
+      closeModalBtn.addEventListener("click", () => {
+        modal.classList.add("hidden");
+      });
+    </script>
+  </body>
+</html>
